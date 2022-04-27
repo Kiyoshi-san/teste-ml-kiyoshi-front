@@ -5,11 +5,8 @@ const Home: React.FC = () => {
   return (
     <>
       <Head>
-        <title>React meetups</title>
-        <meta
-          name="description"
-          content="Browse a huge list of highly active React meetups!"
-        />
+        <title>ML Front test Kiyoshi</title>
+        <meta name="description" content="ML Front test Kiyoshi" />
       </Head>
       <Header />
     </>

@@ -18,7 +18,8 @@
       "@components/*": ["components/*"],
       "@pages/*": ["pages/*"],
       "@models/*": ["models/*"],
-      "@services/*": ["services/*"]
+      "@services/*": ["services/*"],
+      "@styles/*": ["styles/*"]
     },
     "incremental": true
   },
