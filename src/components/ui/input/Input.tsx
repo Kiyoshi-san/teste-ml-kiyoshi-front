@@ -1,5 +1,6 @@
 type InputModel = {
   type?: string;
+  name?: string;
   isValid?: boolean;
   erroMessage?: string;
   placeholder?: string;
@@ -8,6 +9,7 @@ type InputModel = {
 
 const Input: React.ForwardRefRenderFunction<HTMLInputElement, InputModel> = ({
   type = "text",
+  name,
   isValid = true,
   erroMessage = "",
   placeholder,
@@ -19,6 +21,7 @@ const Input: React.ForwardRefRenderFunction<HTMLInputElement, InputModel> = ({
       <input
         {...rest}
         type={type}
+        name={name}
         placeholder={placeholder}
         onChange={onChange}
       />
