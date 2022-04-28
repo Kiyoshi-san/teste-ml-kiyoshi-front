@@ -1,4 +1,3 @@
-import Header from "@components/header/Header";
 import Head from "next/head";
 
 const Home: React.FC = () => {
@@ -8,7 +7,7 @@ const Home: React.FC = () => {
         <title>ML Front test Kiyoshi</title>
         <meta name="description" content="ML Front test Kiyoshi" />
       </Head>
-      <Header />
+      kiyoshi teste
     </>
   );
 };
