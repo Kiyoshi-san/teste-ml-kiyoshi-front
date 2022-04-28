@@ -7,7 +7,6 @@ const Home: React.FC = () => {
         <title>ML Front test Kiyoshi</title>
         <meta name="description" content="ML Front test Kiyoshi" />
       </Head>
-      kiyoshi teste
     </>
   );
 };
