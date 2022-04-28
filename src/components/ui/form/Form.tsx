@@ -1,6 +1,6 @@
 type FormProps = {
   children: React.ReactNode;
-  className: string;
+  className?: string;
   onSubmit: (e: any) => void;
 };
 
