@@ -1,0 +1,13 @@
+.logo-container {
+    img {
+        max-width: rem-calc(96);
+    }
+}
+
+@media(max-width: map-get($breakpoints, 'medium')) {
+    .logo-container {
+        img {
+            max-width: rem-calc(48);
+        }
+    }
+}

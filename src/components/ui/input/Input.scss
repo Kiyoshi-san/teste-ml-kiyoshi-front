@@ -1,0 +1,12 @@
+.input-container {
+    width: 100%;
+    input {
+        border: none;
+        padding: rem-calc(16);
+        width: 100%;
+        font-size: rem-calc(16);
+        &:focus {
+            outline: none;
+        }
+    }
+}

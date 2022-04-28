@@ -3,10 +3,12 @@ import SearchBar from "@components/searchBar/SearchBar";
 
 const Header: React.FC = () => {
   return (
-    <>
-      <Logo />
-      <SearchBar />
-    </>
+    <div className="header-container">
+      <div className="header-box">
+        <Logo />
+        <SearchBar />
+      </div>
+    </div>
   );
 };
 

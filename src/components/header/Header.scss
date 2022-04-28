@@ -1,0 +1,19 @@
+.header-container {
+    display: flex;
+    justify-content: center;
+    background-color: map-get(map-get($theme-color, 'primary'), 'first');
+    .header-box {
+        display: flex;
+        width: 70%;
+        gap: rem-calc(20);
+    }
+}
+
+@media(max-width: map-get($breakpoints, 'medium')) {
+    .header-container {
+        padding: rem-calc(5);
+        .header-box {
+            width: 100%;
+        }
+    }
+}

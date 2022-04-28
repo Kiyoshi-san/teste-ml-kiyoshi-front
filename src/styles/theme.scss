@@ -1,0 +1,19 @@
+// Colors
+
+$theme-color: (
+    primary: (
+      first: #FEE600,
+      secondary: #EDEEEF,
+      third: #393A3B,
+      fourth: #A4A5A6
+    )
+);
+
+// Breakpoints
+// --------------
+
+$breakpoints: (
+  small: 0,
+  medium: 675px,
+  large: 1047px
+);
