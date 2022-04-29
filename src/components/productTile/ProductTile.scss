@@ -1,0 +1,11 @@
+.product-tile-container {
+    .column-one {
+        .image-container {
+            img {
+                width: rem-calc(250);
+                height: auto;
+                max-height: rem-calc(250);
+            }
+        }
+    }
+}

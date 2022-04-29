@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useRouter } from "next/router";
 import { Input } from "components/ui/input";
 import { Button } from "components/ui/button";
 import { BsSearch } from "react-icons/bs";
@@ -12,6 +13,8 @@ import {
 } from "@redux/reducer/searchBar-slice";
 
 const SearchBar: React.FC = () => {
+  const router = useRouter();
+
   const [searchVal, setSearchVal] = useState<string>("");
   const ITEMS_PATH = process.env.NEXT_PUBLIC_ITEMS_PATH || "/api/items";
 
@@ -20,14 +23,9 @@ const SearchBar: React.FC = () => {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     const text = e.target.elements["search-input"].value;
-    try {
-      const response = await api.get(`${ITEMS_PATH}?q=${text}`);
-      await console.log(response);
-    } catch (error) {
-      if (error instanceof Error) {
-        console.log(`Error: ${error.message}`);
-      }
-    }
+    dispatch(setSuggestionList([]));
+    dispatch(setActiveOverlay(false));
+    router.push(`/items?search=${text}`);
   };
 
   const handleChange = async (text: string) => {
@@ -51,6 +49,9 @@ const SearchBar: React.FC = () => {
           type="text"
           placeholder="Pesquisar"
           autoComplete="off"
+          onFocus={(val: React.ChangeEvent<HTMLInputElement>) => {
+            handleChange(val.target.value);
+          }}
           onChange={(val: React.ChangeEvent<HTMLInputElement>) => {
             handleChange(val.target.value);
           }}

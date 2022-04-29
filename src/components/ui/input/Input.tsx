@@ -6,6 +6,7 @@ type InputModel = {
   placeholder?: string;
   autoComplete?: string;
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
+  onFocus?: React.FocusEventHandler<HTMLInputElement>;
 };
 
 const Input: React.ForwardRefRenderFunction<HTMLInputElement, InputModel> = ({
@@ -16,6 +17,7 @@ const Input: React.ForwardRefRenderFunction<HTMLInputElement, InputModel> = ({
   placeholder,
   autoComplete = "off",
   onChange,
+  onFocus,
   ...rest
 }) => {
   return (
@@ -27,6 +29,7 @@ const Input: React.ForwardRefRenderFunction<HTMLInputElement, InputModel> = ({
         placeholder={placeholder}
         autoComplete={autoComplete}
         onChange={onChange}
+        onFocus={onFocus}
       />
       {!isValid && erroMessage}
     </div>
