@@ -8,7 +8,8 @@ type ProductTileProps = {
   price: number;
   currency: string;
   thumbnail: string;
-  address_state: string;
+  condition: string;
+  free_shipping: boolean;
 };
 
 const ProductTile: React.FC<ProductTileProps> = ({
@@ -17,7 +18,8 @@ const ProductTile: React.FC<ProductTileProps> = ({
   price,
   currency,
   thumbnail,
-  address_state,
+  condition,
+  free_shipping,
 }) => {
   const router = useRouter();
 
@@ -41,11 +43,15 @@ const ProductTile: React.FC<ProductTileProps> = ({
           </div>
           <div className="description-container">
             <div className="title-container">{title}</div>
-            <div className="complete-container">completo</div>
+            <div className="complete-container">
+              {condition === "new" ? "Novo" : condition}
+            </div>
           </div>
         </div>
         <div className="column-three">
-          <div className="state">{address_state}</div>
+          <div className="condition">
+            {free_shipping ? "Frete Grátis" : null}
+          </div>
         </div>
       </div>
     </div>

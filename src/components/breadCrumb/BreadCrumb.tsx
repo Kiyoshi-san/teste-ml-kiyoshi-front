@@ -1,9 +1,5 @@
 type BreadCrumbProps = {
-  breadCrumb: {
-    id: string;
-    name: string;
-    results: number;
-  }[];
+  breadCrumb: string[];
 };
 
 const BreadCrumb: React.FC<BreadCrumbProps> = ({ breadCrumb }) => {
@@ -12,7 +8,7 @@ const BreadCrumb: React.FC<BreadCrumbProps> = ({ breadCrumb }) => {
     <div className="breadcrumb-container">
       {breadCrumb.map((brd, index) => (
         <div key={`breadcrumb-${index}`} className="breadcrumb-box">
-          {brd.name}
+          {brd}
         </div>
       ))}
     </div>

@@ -4,21 +4,27 @@ import { ProductTileModel } from "@models/components/product";
 import { GetServerSideProps } from "next";
 import api from "services/api";
 
-const ProductListPage = (data: any) => {
-  const respData = Object.values(data.data);
+type ProductListPageProps = {
+  data: ProductTileModel;
+};
+
+const ProductListPage = (data: ProductListPageProps) => {
+  const respData = data.data;
+  console.log(respData);
   return (
     <div className="product-list-page-container">
-      <BreadCrumb breadCrumb={data.breadCrumb} />
+      <BreadCrumb breadCrumb={respData.categories} />
       <div className="product-list-page-box">
-        {respData.length
-          ? respData.map((dt: ProductTileModel) => (
+        {respData.items.length
+          ? respData.items.map((dt) => (
               <ProductTile
                 id={dt.id}
                 title={dt.title}
-                price={dt.prices.amount}
-                currency={dt.prices.currency_id}
+                price={dt.price.amount}
+                currency={dt.price.currency}
                 thumbnail={dt.thumbnail}
-                address_state={dt.address.state_name}
+                condition={dt.condition}
+                free_shipping={dt.free_shipping}
               />
             ))
           : null}

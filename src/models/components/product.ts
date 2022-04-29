@@ -1,19 +1,23 @@
 type PriceModel = {
+  currency: string;
   amount: number;
-  currency_id: string;
+  decimals: string;
+};
+
+type ItemsModel = {
+  id: string;
+  title: string;
+  price: PriceModel;
+  thumbnail: string;
+  condition: string;
+  free_shipping: boolean;
 };
 
 export type ProductTileModel = {
-  id: string;
-  title: string;
-  prices: PriceModel;
-  currency_id: string;
-  thumbnail: string;
-  address: {
-    state_id: string;
-    state_name: string;
-    city_id: string;
-    city_name: string;
+  author: {
+    name: string;
+    lastname: string;
   };
-  breadCrumb: string[];
+  categories: string[];
+  items: ItemsModel[];
 };
