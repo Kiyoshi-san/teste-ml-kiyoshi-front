@@ -7,7 +7,9 @@ $theme-color: (
       third: #EDEEEF,
       fourth: #393A3B,
       fifth: #A4A5A6,
-      sixth: #FFFFFF
+      sixth: #FFFFFF,
+      seventh: #B3B4B5,
+      eight: #A0A1A2
     )
 );
 
@@ -19,3 +21,13 @@ $breakpoints: (
   medium: 675px,
   large: 1047px
 );
+
+// Fonts
+$font: (
+  weight: (
+    normal: 400,
+    semiBold: 500,
+    bold: 600,
+    superBold: 700
+  )
+)

@@ -15,4 +15,5 @@ export type ProductTileModel = {
     city_id: string;
     city_name: string;
   };
+  breadCrumb: string[];
 };

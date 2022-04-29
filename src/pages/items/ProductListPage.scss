@@ -1,0 +1,7 @@
+.product-list-page-container {
+    background-color: map-get(map-get($theme-color, primary), third);
+    .product-list-page-box {
+        width: 70%;
+        margin: 0 auto;
+    }
+}

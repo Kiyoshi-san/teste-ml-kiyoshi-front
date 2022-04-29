@@ -1,25 +1,28 @@
 import ProductTile from "components/productTile/ProductTile";
+import BreadCrumb from "components/breadCrumb/BreadCrumb";
 import { ProductTileModel } from "@models/components/product";
 import { GetServerSideProps } from "next";
 import api from "services/api";
 
 const ProductListPage = (data: any) => {
-  const respData = Object.values(data);
-  console.log("kiyoshi", respData);
+  const respData = Object.values(data.data);
   return (
-    <div>
-      {respData.length
-        ? respData.map((dt: ProductTileModel) => (
-            <ProductTile
-              id={dt.id}
-              title={dt.title}
-              price={dt.prices.amount}
-              currency={dt.prices.currency_id}
-              thumbnail={dt.thumbnail}
-              address_state={dt.address.state_name}
-            />
-          ))
-        : null}
+    <div className="product-list-page-container">
+      <BreadCrumb breadCrumb={data.breadCrumb} />
+      <div className="product-list-page-box">
+        {respData.length
+          ? respData.map((dt: ProductTileModel) => (
+              <ProductTile
+                id={dt.id}
+                title={dt.title}
+                price={dt.prices.amount}
+                currency={dt.prices.currency_id}
+                thumbnail={dt.thumbnail}
+                address_state={dt.address.state_name}
+              />
+            ))
+          : null}
+      </div>
     </div>
   );
 };

@@ -1,10 +1,43 @@
 .product-tile-container {
-    .column-one {
-        .image-container {
-            img {
-                width: rem-calc(250);
-                height: auto;
-                max-height: rem-calc(250);
+    padding: rem-calc(25) rem-calc(20);
+    background-color: map-get(map-get($theme-color, primary), sixth);
+    cursor: pointer;
+    .product-tile-box {
+        display: flex;
+        padding-bottom: rem-calc(20);
+        border-bottom: solid 1px map-get(map-get($theme-color, primary), third);
+        .column-one {
+            .image-container {
+                width: fit-content;
+                img {
+                    width: auto;
+                    height: rem-calc(200);
+                    max-width: rem-calc(180);
+                }
+            }
+        }
+        .column-two {
+            padding: rem-calc(20);
+            .price-container {
+                font-size: rem-calc(20);
+                font-weight: map-get(map-get($font, weight), semiBold);
+                margin-bottom: rem-calc(15);
+            }
+            .description-container {
+                .title-container {
+                    
+                }
+                .complete-container {
+
+                }
+            }
+        }
+        .column-three {
+            margin-left: auto;
+            .state {
+                position: relative;
+                top: rem-calc(18);
+                padding: rem-calc(20);
             }
         }
     }
