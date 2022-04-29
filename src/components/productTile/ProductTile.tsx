@@ -1,4 +1,5 @@
 import { Image } from "components/ui/image";
+import { useRouter } from "next/router";
 import Currency from "react-currency-formatter";
 
 type ProductTileProps = {
@@ -18,8 +19,11 @@ const ProductTile: React.FC<ProductTileProps> = ({
   thumbnail,
   address_state,
 }) => {
+  const router = useRouter();
+
   const handleProductTileClick = (id: string) => {
     console.log(id);
+    id && router.push(`/items/${id}`);
   };
 
   return (
