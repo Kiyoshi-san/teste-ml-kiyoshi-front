@@ -23,14 +23,6 @@
                 font-weight: map-get(map-get($font, weight), semiBold);
                 margin-bottom: rem-calc(15);
             }
-            .description-container {
-                .title-container {
-                    
-                }
-                .complete-container {
-
-                }
-            }
         }
         .column-three {
             margin-left: auto;

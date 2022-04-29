@@ -52,6 +52,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-currency-formatter": "^1.1.4",
     "eslint": "^8.14.0",
     "jest": "^27.5.1"
   }
