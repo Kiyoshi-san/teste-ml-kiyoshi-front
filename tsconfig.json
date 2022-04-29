@@ -19,7 +19,8 @@
       "@pages/*": ["pages/*"],
       "@models/*": ["models/*"],
       "@services/*": ["services/*"],
-      "@styles/*": ["styles/*"]
+      "@styles/*": ["styles/*"],
+      "@redux/*": ["redux/*"]
     },
     "incremental": true
   },

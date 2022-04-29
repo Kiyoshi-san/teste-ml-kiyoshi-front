@@ -1,0 +1,18 @@
+.suggestion-container {
+    position: absolute;
+    top: 0;
+    background-color: map-get(map-get($theme-color, primary), sixth);
+    width: 100%;
+    transform: translate(rem-calc(-1), rem-calc(75));
+    &.active {
+        border: map-get(map-get($theme-color, primary), fifth) solid 1px;
+    }
+    .suggestion-row {
+        padding: rem-calc(10);
+        &:hover {
+            background-color: map-get(map-get($theme-color, primary), secondary);
+            color: map-get(map-get($theme-color, primary), sixth)
+        }
+        cursor: pointer;
+    }
+}

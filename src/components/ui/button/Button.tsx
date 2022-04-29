@@ -13,8 +13,8 @@ const Button: React.ForwardRefRenderFunction<HTMLButtonElement, Button> = ({
   ...rest
 }) => {
   return (
-    <div className="button-container">
-      <button {...rest} type={type} onClick={onClick}>
+    <div className="button-container" onClick={onClick}>
+      <button {...rest} type={type}>
         {text ? text : icon}
       </button>
     </div>

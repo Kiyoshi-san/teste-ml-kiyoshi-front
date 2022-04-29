@@ -4,6 +4,7 @@ type InputModel = {
   isValid?: boolean;
   erroMessage?: string;
   placeholder?: string;
+  autoComplete?: string;
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
 };
 
@@ -13,6 +14,7 @@ const Input: React.ForwardRefRenderFunction<HTMLInputElement, InputModel> = ({
   isValid = true,
   erroMessage = "",
   placeholder,
+  autoComplete = "off",
   onChange,
   ...rest
 }) => {
@@ -23,6 +25,7 @@ const Input: React.ForwardRefRenderFunction<HTMLInputElement, InputModel> = ({
         type={type}
         name={name}
         placeholder={placeholder}
+        autoComplete={autoComplete}
         onChange={onChange}
       />
       {!isValid && erroMessage}

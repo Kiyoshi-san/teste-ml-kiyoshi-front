@@ -3,13 +3,13 @@ import Link from "next/link";
 
 const Logo: React.FC = () => {
   return (
-    <Link href="/" passHref>
-      <a>
-        <div className="logo-container">
+    <div className="logo-container">
+      <Link href="/" passHref>
+        <a>
           <Image src="/img/mercado-livre.png" alt="logo" />
-        </div>
-      </a>
-    </Link>
+        </a>
+      </Link>
+    </div>
   );
 };
 
