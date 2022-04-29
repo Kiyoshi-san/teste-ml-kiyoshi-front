@@ -16,3 +16,9 @@
         cursor: pointer;
     }
 }
+
+@media(max-width: map-get($breakpoints, medium)) {
+    .suggestion-container {
+        transform: translate(rem-calc(-1), rem-calc(51));
+    }
+}
