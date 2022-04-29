@@ -14,7 +14,7 @@ const Header: React.FC = () => {
     dispatch(setSuggestionList([]));
   };
 
-  const { activeOverlay } = useSelector((state) => state.searchBar);
+  const { activeOverlay } = useSelector((state: any) => state.searchBar);
 
   return (
     <div className="header-container">

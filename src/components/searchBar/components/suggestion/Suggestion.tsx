@@ -1,7 +1,8 @@
+import { SuggestionModel } from "@models/components/searchBar";
 import { useSelector } from "react-redux";
 
 const Suggestion: React.FC = () => {
-  const { suggestionList } = useSelector((state) => state.searchBar);
+  const { suggestionList } = useSelector((state: any) => state.searchBar);
 
   return (
     <div
@@ -10,7 +11,7 @@ const Suggestion: React.FC = () => {
       }`}
     >
       {suggestionList?.length
-        ? suggestionList?.map((sugL, index) => (
+        ? suggestionList?.map((sugL: SuggestionModel, index: number) => (
             <div
               key={`suggestion-${index}`}
               className="suggestion-row"
