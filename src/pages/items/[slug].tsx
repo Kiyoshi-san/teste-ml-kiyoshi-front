@@ -1,10 +1,50 @@
+import { Image } from "@components/ui/image";
+import { ProductDetailsPageModel } from "@models/components/product";
 import { GetServerSideProps } from "next";
 import api from "services/api";
+import Currency from "react-currency-formatter";
 
-const ProductDetailsPage: React.FC = (data) => {
-  console.log(data);
+const ProductDetailsPage: React.FC<ProductDetailsPageModel> = (data) => {
+  const {
+    item: {
+      id,
+      title,
+      price: { currency, amount },
+      picture,
+      condition,
+      sold_quantity,
+      description,
+    },
+  } = data;
+
   return (
-    <div className="product-details-page-container">Product Details Page</div>
+    <div className="product-details-page-container">
+      <div className="column-one">
+        <div className="pdp-image-container">
+          <Image src={picture} alt={title} />
+        </div>
+        <div className="pdp-description-container">
+          <div className="description-title-container">
+            <h2>Descripcion del Producto</h2>
+          </div>
+          <div className="description-container">
+            <p>{description}</p>
+          </div>
+        </div>
+      </div>
+      <div className="column-two">
+        <div className="quantity-container">
+          Nuevo{" "}
+          {`${sold_quantity} ${sold_quantity > 1 ? "vendidos" : "vendido"}`}
+        </div>
+        <div className="pdp-title-container">
+          <h1>{title}</h1>
+        </div>
+        <div className="pdp-price-container">
+          <Currency quantity={amount} currency={currency} />
+        </div>
+      </div>
+    </div>
   );
 };
 

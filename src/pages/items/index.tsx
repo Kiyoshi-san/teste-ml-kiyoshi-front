@@ -1,8 +1,14 @@
 import ProductTile from "components/productTile/ProductTile";
+import { useDispatch } from "react-redux";
 import BreadCrumb from "components/breadCrumb/BreadCrumb";
 import { ProductTileModel } from "@models/components/product";
 import { GetServerSideProps } from "next";
 import api from "services/api";
+import { useEffect } from "react";
+import {
+  setActiveOverlay,
+  setSuggestionList,
+} from "redux/reducer/searchBar-slice";
 
 type ProductListPageProps = {
   data: ProductTileModel;
@@ -10,7 +16,14 @@ type ProductListPageProps = {
 
 const ProductListPage = (data: ProductListPageProps) => {
   const respData = data.data;
-  console.log(respData);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(setActiveOverlay(false));
+    dispatch(setSuggestionList([]));
+  }, []);
+
   return (
     <div className="product-list-page-container">
       <BreadCrumb breadCrumb={respData.categories} />
@@ -41,19 +54,11 @@ export const getServerSideProps: GetServerSideProps = async ({
   const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:5000";
   const ITEMS_PATH = process.env.NEXT_PUBLIC_ITEMS_PATH || "/api/items";
 
-  try {
-    const { data } = await api.get(
-      `${BASE_URL}${ITEMS_PATH}?q=${query.search}`
-    );
+  const { data } = await api.get(`${BASE_URL}${ITEMS_PATH}?q=${query.search}`);
 
-    return {
-      props: { ...data },
-    };
-  } catch (error) {
-    if (error instanceof Error) {
-      console.log(`Error: ${error.message}`);
-    }
-  }
+  return {
+    props: { ...data },
+  };
 };
 
 export default ProductListPage;

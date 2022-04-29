@@ -21,3 +21,22 @@ export type ProductTileModel = {
   categories: string[];
   items: ItemsModel[];
 };
+
+export type ProductDetailsPageModel = {
+  author: {
+    name: string;
+    lastname: string;
+  };
+  item: {
+    id: string;
+    title: string;
+    price: {
+      currency: string;
+      amount: number;
+    };
+    picture: string;
+    condition: string;
+    sold_quantity: number;
+    description: string;
+  };
+};
