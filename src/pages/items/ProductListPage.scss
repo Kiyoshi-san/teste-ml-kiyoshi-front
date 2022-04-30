@@ -1,7 +1,9 @@
 .product-list-page-container {
     background-color: map-get(map-get($theme-color, primary), third);
+    padding-top: rem-calc(20);
     .product-list-page-box {
-        width: 70%;
         margin: 0 auto;
+        margin-top: rem-calc(20);
+        width: 70%;
     }
 }

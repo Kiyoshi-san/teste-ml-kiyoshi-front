@@ -2,7 +2,6 @@
     display: flex;
     width: 70%;
     margin: 0 auto;
-    padding: rem-calc(20) 0;
     .breadcrumb-box {
         color: map-get(map-get($theme-color, primary), seventh);
         &:after {
