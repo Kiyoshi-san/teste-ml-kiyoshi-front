@@ -74,10 +74,12 @@
     }
 }
 
+// Tablet
 @media(max-width: map-get($breakpoints, medium)) {
     .product-details-page-container {
         .product-details-page-box {
             display: block;
+            width: 80%;
             .column-one, .column-two {
                 margin: 0 auto;
                 width: 100%;
@@ -92,6 +94,15 @@
                     }
                 }
             }
+        }
+    }
+}
+
+// Mobile
+@media(max-width: map-get($breakpoints, small)) {
+    .product-details-page-container {
+        .product-details-page-box {
+            width: 100%;
         }
     }
 }

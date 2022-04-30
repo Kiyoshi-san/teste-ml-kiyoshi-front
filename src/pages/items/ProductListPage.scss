@@ -6,3 +6,19 @@
         width: 70%;
     }
 }
+
+@media(max-width: map-get($breakpoints, medium)) {
+    .product-list-page-container {
+        .product-list-page-box {
+            width: 80%;
+        }
+    }
+}
+
+@media(max-width: map-get($breakpoints, small)) {
+    .product-list-page-container {
+        .product-list-page-box {
+            width: 100%;
+        }
+    }
+}
