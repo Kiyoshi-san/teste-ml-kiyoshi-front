@@ -2,6 +2,7 @@
     background-color: map-get(map-get($theme-color, 'primary'), third);
     padding: rem-calc(15);
     border: none;
+    outline: none;
     font-size: rem-calc(16);
     text-align: center;
     cursor: pointer;
