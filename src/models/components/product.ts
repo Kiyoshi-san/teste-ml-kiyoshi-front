@@ -1,7 +1,7 @@
 type PriceModel = {
   currency: string;
   amount: number;
-  decimals: string;
+  decimalss: string;
 };
 
 type ItemsModel = {
@@ -33,6 +33,7 @@ export type ProductDetailsPageModel = {
     price: {
       currency: string;
       amount: number;
+      decimals: string;
     };
     picture: string;
     condition: string;

@@ -6,13 +6,19 @@ import Currency from "react-currency-formatter";
 import { BreadCrumb } from "@components/breadCrumb";
 import { useSelector } from "react-redux";
 import { Button } from "@components/ui/button";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import {
+  setActiveOverlay,
+  setSuggestionList,
+} from "redux/reducer/searchBar-slice";
 
 const ProductDetailsPage: React.FC<ProductDetailsPageModel> = (data) => {
   const {
     item: {
       id,
       title,
-      price: { currency, amount },
+      price: { currency, amount, decimals },
       picture,
       condition,
       sold_quantity,
@@ -20,11 +26,18 @@ const ProductDetailsPage: React.FC<ProductDetailsPageModel> = (data) => {
     },
   } = data;
 
+  const dispatch = useDispatch();
+
   const { breadCrumb } = useSelector((state: any) => state.searchBar);
 
   const handleClick = () => {
     alert("Adicionado ao carrinho");
   };
+
+  useEffect(() => {
+    dispatch(setActiveOverlay(false));
+    dispatch(setSuggestionList([]));
+  }, []);
 
   return (
     <div className="product-details-page-container">
@@ -52,7 +65,14 @@ const ProductDetailsPage: React.FC<ProductDetailsPageModel> = (data) => {
             <h1>{title}</h1>
           </div>
           <div className="pdp-price-container">
-            <Currency quantity={amount} currency={currency} />
+            <div className="price-box">
+              <Currency
+                quantity={amount}
+                currency={currency}
+                pattern="! ##,### "
+              />
+            </div>
+            <div className="decimals-box">{decimals}</div>
           </div>
           <div className="pdp-button-container">
             <Button text="Comprar" onClick={handleClick} />

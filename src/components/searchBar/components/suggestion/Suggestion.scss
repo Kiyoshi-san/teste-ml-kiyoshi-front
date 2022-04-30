@@ -3,7 +3,7 @@
     top: 0;
     background-color: map-get(map-get($theme-color, primary), sixth);
     width: 100%;
-    transform: translate(rem-calc(-1), rem-calc(75));
+    transform: translate(rem-calc(-1), rem-calc(60));
     &.active {
         border: map-get(map-get($theme-color, primary), fifth) solid 1px;
     }
