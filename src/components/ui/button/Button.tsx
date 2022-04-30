@@ -13,11 +13,14 @@ const Button: React.ForwardRefRenderFunction<HTMLButtonElement, Button> = ({
   ...rest
 }) => {
   return (
-    <div className="button-container" onClick={onClick}>
-      <button {...rest} type={type}>
-        {text ? text : icon}
-      </button>
-    </div>
+    <button
+      className="button-container"
+      {...rest}
+      type={type}
+      onClick={onClick}
+    >
+      {text ? text : icon}
+    </button>
   );
 };
 
