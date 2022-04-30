@@ -11,6 +11,7 @@ import {
   setSuggestionList,
 } from "redux/reducer/searchBar-slice";
 import { setBreadCrumbList } from "redux/reducer/searchBar-slice";
+import { Notfound } from "@components/notfound";
 
 type ProductListPageProps = {
   data: ProductTileModel;
@@ -31,23 +32,25 @@ const ProductListPage = (data: ProductListPageProps) => {
     <div className="product-list-page-container">
       <BreadCrumb breadCrumb={respData.categories} />
       <div className="product-list-page-box">
-        {respData.items.length
-          ? respData.items.map((dt, index) => (
-              <Fragment key={`product-tile-${index}`}>
-                {index <= 3 ? (
-                  <ProductTile
-                    id={dt.id}
-                    title={dt.title}
-                    price={dt.price.amount}
-                    currency={dt.price.currency}
-                    thumbnail={dt.thumbnail}
-                    condition={dt.condition}
-                    free_shipping={dt.free_shipping}
-                  />
-                ) : null}
-              </Fragment>
-            ))
-          : null}
+        {respData.items.length ? (
+          respData.items.map((dt, index) => (
+            <Fragment key={`product-tile-${index}`}>
+              {index <= 3 ? (
+                <ProductTile
+                  id={dt.id}
+                  title={dt.title}
+                  price={dt.price.amount}
+                  currency={dt.price.currency}
+                  thumbnail={dt.thumbnail}
+                  condition={dt.condition}
+                  free_shipping={dt.free_shipping}
+                />
+              ) : null}
+            </Fragment>
+          ))
+        ) : (
+          <Notfound />
+        )}
       </div>
     </div>
   );

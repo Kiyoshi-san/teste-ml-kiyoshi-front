@@ -1,0 +1,20 @@
+.notfound-container {
+    background-color: map-get(map-get($theme-color, primary), third);
+    padding: rem-calc(20 0);
+    height: 79vh;
+    .notfound-box {
+        display: flex;
+        padding: rem-calc(70) rem-calc(20);
+        justify-content: center;
+        align-items: center;
+        margin: rem-calc(20) auto;
+        background-color: map-get(map-get($theme-color, primary), sixth);
+        width: 70%;
+        .magnifier-container {
+            max-width: rem-calc(100);
+        }
+        .notfound-text-container {
+            font-size: rem-calc(35);
+        }
+    }
+}

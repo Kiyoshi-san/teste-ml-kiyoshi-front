@@ -2,6 +2,10 @@
     padding: rem-calc(25) rem-calc(20);
     background-color: map-get(map-get($theme-color, primary), sixth);
     cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+        background-color: rgba(0,0,0,0.03);
+    }
     .product-tile-box {
         display: flex;
         padding-bottom: rem-calc(20);
