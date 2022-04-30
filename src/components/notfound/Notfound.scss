@@ -19,3 +19,16 @@
         }
     }
 }
+
+@media(max-width: map-get($breakpoints, small)) {
+    .notfound-container {
+        .notfound-box {
+            .magnifier-container {
+                max-width: rem-calc(50);
+            }
+            .notfound-text-container {
+                font-size: rem-calc(28);
+            }
+        }
+    }
+}
