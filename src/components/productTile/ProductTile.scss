@@ -7,13 +7,14 @@
         padding-bottom: rem-calc(20);
         border-bottom: solid 1px map-get(map-get($theme-color, primary), third);
         .column-one {
-            width: 20%;
+            width: rem-calc(175);
             .image-container {
                 width: fit-content;
                 img {
                     width: auto;
                     height: rem-calc(200);
                     max-width: rem-calc(180);
+                    border-radius: 4px;
                 }
             }
         }
@@ -35,5 +36,67 @@
                 padding: rem-calc(20);
             }
         }
+    }
+}
+
+@media(max-width: map-get($breakpoints, medium)) {
+    .product-tile-container {
+        .product-tile-box {
+            position: relative;
+            display: block;
+            .column-one {
+                margin: 0 auto;
+            }
+            .column-two {
+                display: flex;
+                gap: rem-calc(6);
+                margin: 0 auto;
+                width: 100%;
+                .price-container {
+                    width: 30%;
+                }
+                .description-container {
+                    width: 70%;
+                }
+            }
+            .column-three {
+                &.active {
+                    position: absolute;
+                    height: rem-calc(80);
+                    width: rem-calc(80);
+                    color: map-get(map-get($theme-color, primary), sixth);
+                    background-color: map-get(map-get($theme-color, primary), fourth);
+                    margin-left: unset;
+                    top: 0;
+                    border-radius: 50%;
+                    .condition {
+                        position: relative;
+                        top: rem-calc(20);
+                        padding: rem-calc(5) rem-calc(21);
+                        text-align: center;
+                    }
+                }
+            }
+        }       
+    }
+}
+
+// Mobile
+@media(max-width: map-get($breakpoints, small)) {
+    .product-tile-container {
+        .product-tile-box {
+            .column-two {
+                display: block;
+                gap: rem-calc(6);
+                margin: 0 auto;
+                width: 85%;
+                .price-container {
+                    width: 100%;
+                }
+                .description-container {
+                    width: 100%;
+                }
+            }
+        }       
     }
 }

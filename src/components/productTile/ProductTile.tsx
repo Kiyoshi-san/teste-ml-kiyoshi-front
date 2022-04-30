@@ -48,7 +48,7 @@ const ProductTile: React.FC<ProductTileProps> = ({
             </div>
           </div>
         </div>
-        <div className="column-three">
+        <div className={`column-three ${free_shipping ? "active" : ""}`}>
           <div className="condition">
             {free_shipping ? "Frete Grátis" : null}
           </div>
