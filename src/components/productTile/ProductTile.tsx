@@ -44,7 +44,11 @@ const ProductTile: React.FC<ProductTileProps> = ({
           <div className="description-container">
             <div className="title-container">{title}</div>
             <div className="complete-container">
-              {condition === "new" ? "Novo" : condition}
+              {condition === "new"
+                ? "Novo"
+                : condition === "used"
+                ? "Usado"
+                : condition}
             </div>
           </div>
         </div>
