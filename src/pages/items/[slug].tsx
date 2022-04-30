@@ -15,7 +15,7 @@ import {
 
 const ProductDetailsPage: React.FC<ProductDetailsPageModel> = (data) => {
   const {
-    item: {
+    items: {
       id,
       title,
       price: { currency, amount, decimals },

@@ -27,7 +27,7 @@ export type ProductDetailsPageModel = {
     name: string;
     lastname: string;
   };
-  item: {
+  items: {
     id: string;
     title: string;
     price: {
