@@ -10,7 +10,7 @@ import { useDispatch } from "react-redux";
 import {
   setSuggestionList,
   setActiveOverlay,
-} from "@redux/reducer/searchBar-slice";
+} from "redux/reducer/searchBar-slice";
 
 const SearchBar: React.FC = () => {
   const router = useRouter();

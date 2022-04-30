@@ -1,5 +1,6 @@
 .product-details-page-container {
     background-color: map-get(map-get($theme-color, primary), third);
+    height: 88vh;
     padding: rem-calc(20 0);
     .product-details-page-box {
         display: flex;
