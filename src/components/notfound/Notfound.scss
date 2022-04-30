@@ -12,7 +12,9 @@
         background-color: map-get(map-get($theme-color, primary), sixth);
         width: 70%;
         .magnifier-container {
-            max-width: rem-calc(100);
+            img {
+                max-width: rem-calc(100);
+            }
         }
         .notfound-text-container {
             font-size: rem-calc(35);
@@ -24,7 +26,9 @@
     .notfound-container {
         .notfound-box {
             .magnifier-container {
-                max-width: rem-calc(50);
+                img {
+                    max-width: rem-calc(50);
+                }
             }
             .notfound-text-container {
                 font-size: rem-calc(28);
