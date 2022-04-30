@@ -31,16 +31,21 @@ const ProductListPage = (data: ProductListPageProps) => {
       <BreadCrumb breadCrumb={respData.categories} />
       <div className="product-list-page-box">
         {respData.items.length
-          ? respData.items.map((dt) => (
-              <ProductTile
-                id={dt.id}
-                title={dt.title}
-                price={dt.price.amount}
-                currency={dt.price.currency}
-                thumbnail={dt.thumbnail}
-                condition={dt.condition}
-                free_shipping={dt.free_shipping}
-              />
+          ? respData.items.map((dt, index) => (
+              <>
+                {index <= 3 ? (
+                  <ProductTile
+                    key={`product-tile-${index}`}
+                    id={dt.id}
+                    title={dt.title}
+                    price={dt.price.amount}
+                    currency={dt.price.currency}
+                    thumbnail={dt.thumbnail}
+                    condition={dt.condition}
+                    free_shipping={dt.free_shipping}
+                  />
+                ) : null}
+              </>
             ))
           : null}
       </div>
