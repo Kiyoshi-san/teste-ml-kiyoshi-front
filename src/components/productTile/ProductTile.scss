@@ -52,12 +52,9 @@
                 display: flex;
                 gap: rem-calc(6);
                 margin: 0 auto;
-                width: 100%;
+                width: unset;
                 .price-container {
                     width: 30%;
-                }
-                .description-container {
-                    width: 70%;
                 }
             }
             .column-three {

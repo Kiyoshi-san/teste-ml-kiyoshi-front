@@ -97,12 +97,3 @@
         }
     }
 }
-
-// Mobile
-@media(max-width: map-get($breakpoints, small)) {
-    .product-details-page-container {
-        .product-details-page-box {
-            width: 100%;
-        }
-    }
-}
