@@ -1,6 +1,7 @@
 .button-container {
     background-color: map-get(map-get($theme-color, 'primary'), third);
     padding: rem-calc(14);
+    text-align: center;
     cursor: pointer;
     button {
         border: none;

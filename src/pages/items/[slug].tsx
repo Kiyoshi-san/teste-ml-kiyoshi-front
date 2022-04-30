@@ -5,6 +5,7 @@ import api from "services/api";
 import Currency from "react-currency-formatter";
 import { BreadCrumb } from "@components/breadCrumb";
 import { useSelector } from "react-redux";
+import { Button } from "@components/ui/button";
 
 const ProductDetailsPage: React.FC<ProductDetailsPageModel> = (data) => {
   const {
@@ -21,6 +22,10 @@ const ProductDetailsPage: React.FC<ProductDetailsPageModel> = (data) => {
 
   const { breadCrumb } = useSelector((state: any) => state.searchBar);
 
+  const handleClick = () => {
+    alert("Adicionado ao carrinho");
+  };
+
   return (
     <div className="product-details-page-container">
       <BreadCrumb breadCrumb={breadCrumb} />
@@ -31,7 +36,7 @@ const ProductDetailsPage: React.FC<ProductDetailsPageModel> = (data) => {
           </div>
           <div className="pdp-description-container">
             <div className="description-title-container">
-              <h2>Descripcion del Producto</h2>
+              <h2>Descripción del Producto</h2>
             </div>
             <div className="description-container">
               <p>{description}</p>
@@ -48,6 +53,9 @@ const ProductDetailsPage: React.FC<ProductDetailsPageModel> = (data) => {
           </div>
           <div className="pdp-price-container">
             <Currency quantity={amount} currency={currency} />
+          </div>
+          <div className="pdp-button-container">
+            <Button text="Comprar" onClick={handleClick} />
           </div>
         </div>
       </div>
