@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import ProductTile from "components/productTile/ProductTile";
 import { useDispatch } from "react-redux";
 import BreadCrumb from "components/breadCrumb/BreadCrumb";
@@ -32,10 +33,9 @@ const ProductListPage = (data: ProductListPageProps) => {
       <div className="product-list-page-box">
         {respData.items.length
           ? respData.items.map((dt, index) => (
-              <>
+              <Fragment key={`product-tile-${index}`}>
                 {index <= 3 ? (
                   <ProductTile
-                    key={`product-tile-${index}`}
                     id={dt.id}
                     title={dt.title}
                     price={dt.price.amount}
@@ -45,7 +45,7 @@ const ProductListPage = (data: ProductListPageProps) => {
                     free_shipping={dt.free_shipping}
                   />
                 ) : null}
-              </>
+              </Fragment>
             ))
           : null}
       </div>
