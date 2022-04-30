@@ -3,8 +3,7 @@
     padding-top: rem-calc(20);
     .product-details-page-box {
         display: flex;
-        margin: 0 auto;
-        margin-top: rem-calc(20);
+        margin: rem-calc(20) auto;
         gap: rem-calc(15);
         width: 70%;
         background-color: map-get(map-get($theme-color , primary), sixth);

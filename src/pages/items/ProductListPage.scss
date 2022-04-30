@@ -2,8 +2,7 @@
     background-color: map-get(map-get($theme-color, primary), third);
     padding-top: rem-calc(20);
     .product-list-page-box {
-        margin: 0 auto;
-        margin-top: rem-calc(20);
+        margin: rem-calc(20) auto;
         width: 70%;
     }
 }
