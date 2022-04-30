@@ -3,7 +3,6 @@ type BreadCrumbProps = {
 };
 
 const BreadCrumb: React.FC<BreadCrumbProps> = ({ breadCrumb }) => {
-  console.log(breadCrumb);
   return (
     <div className="breadcrumb-container">
       {breadCrumb.map((brd, index) => (

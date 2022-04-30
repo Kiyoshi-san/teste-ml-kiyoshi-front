@@ -1,0 +1,35 @@
+.product-details-page-container {
+    background-color: map-get(map-get($theme-color, primary), third);
+    .product-details-page-box {
+        display: flex;
+        gap: rem-calc(15);
+        width: 70%;
+        margin: 0 auto;
+        background-color: map-get(map-get($theme-color , primary), sixth);
+        .column-one {
+            width: 66%;
+            .pdp-image-container {
+
+            }
+            .pdp-description-container {
+                .description-title-container {
+                    
+                }
+                .description-container {
+                    
+                }
+            }
+        }
+        .column-two {
+            .quantity-container {
+
+            }
+            .pdp-title-container {
+
+            }
+            .pdp-price-container {
+
+            }
+        }
+    }
+}

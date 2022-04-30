@@ -9,6 +9,7 @@ import {
   setActiveOverlay,
   setSuggestionList,
 } from "redux/reducer/searchBar-slice";
+import { setBreadCrumbList } from "redux/reducer/searchBar-slice";
 
 type ProductListPageProps = {
   data: ProductTileModel;
@@ -22,6 +23,7 @@ const ProductListPage = (data: ProductListPageProps) => {
   useEffect(() => {
     dispatch(setActiveOverlay(false));
     dispatch(setSuggestionList([]));
+    dispatch(setBreadCrumbList(respData.categories));
   }, []);
 
   return (
